@@ -7,6 +7,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Price {
+	
 	@Column(scale = 2)
 	private BigDecimal value;
 	private BookType bookType;

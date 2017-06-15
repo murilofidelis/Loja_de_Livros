@@ -24,14 +24,15 @@
 				name="pages" id="pages" />
 		</div>
 		<br>
-		<c:forEach items="${types}" var="bookType" varStatus="status">
-			<div>
-				<label for="price_${bookType}">${bookType}</label> <input
-					type="text" name="prices[${status.index}].value"
-					id="price_${bookType}" /> <input type="hidden"
-					name="prices[${status.index}].bookType" value="${bookType}" />
-			</div>
-		</c:forEach>
+		<div>
+			<c:forEach items="${types}" var="bookType" varStatus="status">
+				<div>
+					<label for="price_${bookType}">${bookType}</label>
+					<input	type="text" name="prices[${status.index}].value" id="price_${bookType}" /> 
+					<input type="hidden" name="prices[${status.index}].bookType" value="${bookType}" />
+				</div>
+			</c:forEach>
+		</div>
 		<div>
 			<input type="submit" value="Salvar">
 		</div>

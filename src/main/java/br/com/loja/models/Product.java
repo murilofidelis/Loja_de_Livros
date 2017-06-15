@@ -19,9 +19,9 @@ public class Product {
 	@Lob
 	private String description;
 	private int pages;
-	
-	//@ElementCollection
-	//private List<Price> princes = new ArrayList<>();
+
+	@ElementCollection
+	private List<Price> princes = new ArrayList<Price>();
 
 	public Integer getId() {
 		return id;
@@ -55,13 +55,13 @@ public class Product {
 		this.pages = pages;
 	}
 
-	/*public List<Price> getPrinces() {
+	public List<Price> getPrinces() {
 		return princes;
 	}
 
 	public void setPrinces(List<Price> princes) {
 		this.princes = princes;
-	}*/
+	}
 
 	@Override
 	public int hashCode() {

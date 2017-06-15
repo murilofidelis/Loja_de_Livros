@@ -1,22 +1,30 @@
 package teste;
 
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.loja.dao.ProductDAO;
 import br.com.loja.models.Product;
 
+@Transactional
 public class ProductsTest {
 
-	public static void main(String[] args) {
+	@Autowired
+	private ProductDAO productDAO;
+
+	@Test
+	public void salvar() {
 
 		try {
 			Product p = new Product();
-			ProductDAO dao = new ProductDAO();
 
-			p.setId(2);
+			p.setId(202);
 			p.setDescription("teste");
 			p.setTitle("titulo");
 			p.setPages(3);
 
-			dao.save(p);
+			productDAO.save(p);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
